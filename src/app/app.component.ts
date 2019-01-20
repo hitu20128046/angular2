@@ -3,18 +3,31 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'my-app',
   // template: `<h1>Hello {{name}}</h1>`,
-  templateUrl:'./app.component.html'
-})
-export class AppComponent  {
-  name = 'Hitzz';
-  private username:string = 'Test';
-  private currentUser:User ={username:'Test',email:'test@test.com'}
+  templateUrl:'./app.component.html',
+  styles: ['.blue-bg{background-color:blue;}']
 
-  private getUsername():string{
-    return this.currentUser.username
+})
+export class AppComponent {
+	private currentUser:User = { username: "Test", email: "test@test.com" }
+
+	private hideEmail:boolean = false
+
+	private disabledInput:boolean = false
+
+	private isDisabled():boolean {
+		return this.disabledInput
+	}
+
+	private isBlueBg:boolean = true
+	private bgColor:string = 'red'
+
+  private toggle(){
+    this.hideEmail = !this.hideEmail
   }
+
 }
-interface User{
-  username:string,
-  email:string
+
+interface User {
+	username:string,
+	email:string
 }

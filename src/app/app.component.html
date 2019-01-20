@@ -1,8 +1,22 @@
-<h1>This is Hitzz</h1>
-<p>This is something</p>
+<h1>My First Angular 2 App</h1>
+<div>
+	<p>Hello, {{currentUser.username}}!</p>
+	<p [hidden]='hideEmail'>my mail id is hitu20128046@gmail.com </p>
+	<p [hidden]='hideEmail'>Your email is: <em>{{currentUser.email}}</em></p>
+	<p [hidden]='hideEmail'>Your email is: <em>{{currentUser.email}}</em></p>
+<button (click)="toggle()">toggle(click)</button>
+</div>
+<p [hidden]='hideEmail'>Your email is: <em>{{currentUser.email}}</em></p>
 
-<p>Result of 1+1 is {{1+1}}</p>
-<p>My first Angular2 App</p>
-<p>Hello {{currentUser.username}}-{{currentUser.email}}</p>
-<p>Hello {{getUsername()}}!</p>
-<input value="{{getUsername()}}" type ='text'>
+
+<button (mouseover)='toggle()' font-size='10px'>Toggle(mouseleave)</button>
+
+<input [disabled]="disabledInput" type="text" placeholder="Enter your text">
+
+<input [disabled]="isDisabled()" type="text" placeholder="Enter your text">
+
+<input [disabled]="disabledInput" type="text" [value]="currentUser.username" placeholder="Enter your text">
+
+<input [class.blue-bg]="isBlueBg" type="text" placeholder="Enter your text">
+
+<input [style.background-color]="bgColor" type="text" placeholder="Enter your text">
