@@ -4,12 +4,12 @@ import {Account} from './account.model';
 @Component({
   selector: 'my-app',
    // template: `<h1>Hello {{name}}</h1>`,
-  templateUrl:'./app.component.html',
+  templateUrl:'./app.component.html'
   // styles: ['.blue-bg{background-color:blue;}']
 
 })
 export class AppComponent {
-  private _account:Array<Account>=[
+  private _accounts:Array<Account>=[
     {
       id:1,
       title:"SBI Bank",
@@ -22,7 +22,7 @@ export class AppComponent {
   private _nextId = 3
 
   private creatAcc(titleE1:any, descE1:any ,balE1:any){
-    this._account.push(new Account(
+    this._accounts.push(new Account(
                               this._nextId,
                               titleE1.value,
                               descE1.value,
@@ -36,6 +36,6 @@ export class AppComponent {
 
   }
   private removeAcc(index:number){
-    this._account.splice(index,1)
+    this._accounts.splice(index,1)
   }
 }

@@ -1,9 +1,38 @@
-<h1>This is Hitzz</h1>
-<p>This is something</p>
+<h1>Personal finance</h1>
 
-<p>Result of 1+1 is {{1+1}}</p>
-<p>My first Angular2 App</p>
-<p>Hello {{currentUser.username}}-{{currentUser.email}}</p>
-<p>Hello {{getUsername()}}!</p>
-<input value="{{getUsername()}}" type ='text'>
+<div>
+	<h2>Your Acconunt</h2>
+	<div *ngIf="_accounts.length == 2">you dont't have any account yet please add it</div>
+
+	<div *ngFor="#acc of _accounts, #i = index"></div>
+		<!-- <h2>{{acc.title}}({{acc.id}})</h2>
+		<p>{{acc.description}}</p>
+		<p>Balance:<strong>{{acc.balance}}</strong></p>
+		<button (click)="removeAcc(i)">Delete</button> -->
+	<h2>hi</h2>
+
+
+
+	<div>
+		<div>
+			<label for="title">Title:</label>
+			<input id="title" type="text" name="title" value=""#title>
+		</div>
+
+		<div>
+			<label for="desc">Description:</label>
+			<input id="desc" type="text" name="desc" value="" #desc>
+		</div>
+
+		<div>
+			<label for="title">Title:</label>
+			<input id="bal" type="text" name="title" value=""#title>
+		</div>
+
+		<div >
+			<button (click)="creatAcc(title,desc,balance)">Create</button>
+		</div>
+
+	</div>
+
 </div>
