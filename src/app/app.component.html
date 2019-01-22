@@ -5,11 +5,16 @@
 	<div class="info" *ngIf="_accounts.length == 2">you dont't have any account yet please add it</div>
 
 	<!-- <div *ngFor="#acc of _accounts; #i = index"> -->
-	<div class="acc" *ngFor="let acc of _accounts; let i = index">
+	<div class="acc" *ngFor="let acc of _accounts; let i = index"
+	[ngClass]="{
+		selected:_selected[i],
+		otherCSSClass: otherProperty
+	}">
 		<h2>({{acc.id}}):{{_accounts[i].title}}</h2>
 		<p>{{acc.description}}</p>
 		<p>Balance:<strong>{{acc.balance}}</strong></p>
 		<button (click)="removeAcc(i)">Delete</button>
+		<button (click)="select(i)">{{_selected[i] ?'Deselect':'Select'}}</button>
 
 
 </div>
@@ -32,6 +37,7 @@
 
 		<div >
 			<button (click)="creatAcc(title,desc,balance)">Create</button>
+			<!-- <button (click)="toggleColor()">Select</button> -->
 		</div>
 
 	</div>

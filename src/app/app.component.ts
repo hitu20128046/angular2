@@ -29,6 +29,7 @@ export class AppComponent {
                               descE1.value,
                               balE1.value
                             ))
+      this._selected.push(false)
       this._nextId++
 
       titleE1.value=""
@@ -38,5 +39,11 @@ export class AppComponent {
   }
   private removeAcc(index:number){
     this._accounts.splice(index,1)
+    this._selected.splice(index,1)
+  }
+  private _selected:Array<boolean>=[false,false]
+
+  private select(index:number){
+    this._selected[index] = !this._selected[index]
   }
 }
