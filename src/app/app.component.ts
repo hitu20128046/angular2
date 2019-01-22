@@ -4,8 +4,9 @@ import {Account} from './account.model';
 @Component({
   selector: 'my-app',
    // template: `<h1>Hello {{name}}</h1>`,
-  templateUrl:'./app.component.html'
+  templateUrl:'./app.component.html',
   // styles: ['.blue-bg{background-color:blue;}']
+  styleUrls:['./app.component.css']
 
 })
 export class AppComponent {
