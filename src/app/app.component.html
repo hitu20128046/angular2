@@ -4,14 +4,15 @@
 	<h2>Your Acconunt</h2>
 	<div *ngIf="_accounts.length == 2">you dont't have any account yet please add it</div>
 
-	<div *ngFor="#acc of _accounts, #i = index"></div>
-		<!-- <h2>{{acc.title}}({{acc.id}})</h2>
+	<!-- <div *ngFor="#acc of _accounts; #i = index"> -->
+	<div *ngFor="let acc of _accounts; let i = index">
+		<h2>{{_accounts[i].title}}({{acc.id}})</h2>
 		<p>{{acc.description}}</p>
 		<p>Balance:<strong>{{acc.balance}}</strong></p>
-		<button (click)="removeAcc(i)">Delete</button> -->
+		<button (click)="removeAcc(i)">Delete</button>
 	<h2>hi</h2>
 
-
+</div>
 
 	<div>
 		<div>
@@ -26,7 +27,7 @@
 
 		<div>
 			<label for="title">Title:</label>
-			<input id="bal" type="text" name="title" value=""#title>
+			<input id="bal" type="text" name="Balance" value=""#balance>
 		</div>
 
 		<div >
